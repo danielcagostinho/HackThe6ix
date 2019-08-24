@@ -230,6 +230,14 @@ nav ul li a {
   font-weight: 100;
 }
 
+.splash-page-color{
+  background-color: #F9FAFA !important;
+  background: url(../assets/splash-image.png);
+ background-repeat: no-repeat;
+ background-size: 800px;
+ background-position: right;
+}
+
 .splash-page{
   margin-top:15px;
   margin-bottom: 15px;
@@ -239,7 +247,7 @@ nav ul li a {
 }
 
 .pattern-1{
-    background: url(logo-light.png);
+    background: url(../assets/logo-light.png);
    background-repeat: no-repeat;
    background-size: 500px;
    background-position: bottom left;
@@ -252,7 +260,7 @@ nav ul li a {
 
 
 .pattern-2{
-  background-color:#E1E1E1
+  background-color:#F9FAFA 
 }
 
 
