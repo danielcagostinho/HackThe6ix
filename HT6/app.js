@@ -13,8 +13,6 @@ AWS.config.update({
     });
 var cp = new AWS.Comprehend({region: "us-east-1"});
 
-// TODO DELETE
-
 var products = [{'asin': 'B005K4O610', 'comments': [{'id': 'aad54aba-6832-4118-a998-4c1d3d418920', 'content': 'Quality product'}, {'id': 'c6a9bdee-ff4e-4452-9970-0c8caf3e5a94', 'content': 'WORST PRODUCT ON THE MARKET!'}, {'id': 'c59ff975-ac83-4ed6-a7f8-546cdd13795f', 'content': 'Candles are uniform in color and size, look great, and smell very nice....good bayberry fragrance. They are burning evenly and not too fast.'}, {'id': '3049b151-72db-4739-bad5-647d2533be8e', 'content': 'The candles are a gift so I have not opened or used them, but the color is very pretty. However, the photo shows two boxes of candles, and says set of 2. I thought I would be receiving two boxes (a set of two boxes), and for 4 candles the price was comparable to other candles being sold. But I received only one box. If you read the text carefully, somewhere it says two candles, but the photo is misleading and I think should be changed.'}, {'id': 'da9a93fb-3ec1-4bda-a2db-12b8db8446f0', 'content': 'These are my go to every Christmas for my bayberry candles. The scent is amazing and they burn clean to the bottom. The only thing left is minimal thread of wick LOL no candle what so ever is left! These are wonderful candles and I highly recommend you purchase these for your next Christmas bayberry candle tradition'}, {'id': 'a34796f5-1ad8-4c50-8467-b6584870e80f', 'content': 'These tapers arrived in tact; nothing was broken. They smell fresh and beautiful not like they were sitting in a warehouse for a long time. They are very long--12 inches--and will be beautiful burning Christmas Eve.'}, {'id': '07d81184-ea06-4104-b3e6-3af2961dc694', 'content': 'Burned cleanly, the scent was perfect. A great way to celebrate the holidays. Thank you. Will order again.'}, {'id': '75f5ce75-b2ab-4fe8-94b7-2be14263b00a', 'content': 'The picture looked too green so I was worried they were fake BUT they are the real original kind that I have received when I ordered direct from the Root Candles website.'}]}
 ,{'asin': 'B00MRJ8GXK', 'comments': [{'id': '2492f36c-84d5-4bcb-8a64-f0acfae688ee', 'content': "When I pitched the idea of getting this to my team, everyone let out a huge groan. Except for my manager. He asked what it was, and where he could get one. We have yet to play in a duet because /someone/ has been skipping practice, but I've been having a blast playing the national anthem, happy birthday, and the theme song of Game of Thrones on this. Just make sure not to annoy your co-workers /too/ much, or you might just find it broken in two soon..."}, {'id': '60357ada-7f9e-4b4d-8932-16babe184876', 'content': 'My son was excited to get his Otamatone after watching multiple YouTube videos. When it arrived, though, it was disappointment after disappointment. First, no batteries. Then, when we put in the batteries, it didn\'t work. We had to fiddle with the batteries and the battery door to get the "sweet spot" to make it work. Then, the keyboard area wasn\'t very responsive to touch so he couldn\'t get notes he wanted. Then it became too responsive and it played by itself in mournful little electronic shuddering sobs. Maybe we got a bum note, so I didn\'t want to totally kill the Otamatone in rating, but, yeah, this is a cute little paperweight.'}, {'id': 'b52ed7e3-bc8f-4eec-a3ce-b7cc1b464768', 'content': 'I want the instructions in English not in Japanese. I will not change my rating until I receive the proper product.'}, {'id': 'bed5a0f6-35fa-4ac8-95c4-ee9bb07f68bf', 'content': "Defective as soon as I got it. The battery door was extremely difficult to open if you don't use the exact size screwdriver for it, and I had a lot of trouble getting the damn thing to close again with the batteries in. And then after all that work, it didn't even turn on! I returned it."}, {'id': '9c7a6dc2-c015-4198-8bb9-865a8bd11a85', 'content': "I bought this for our family christmas white elephant and all the kids fought for this! It was hilarious! Totally worth every penny and it's as annoying as it is fun. (Their parents hated it so it was an A+ gift lol!!) I would totally buy it again just to watch the kiddos fight over it again during this Christmas lol!!!!"}, {'id': '26cc3de9-d198-4743-b937-a9ec250a8eee', 'content': 'Ordered for my daughter who really wanted one and it works pretty much as described. Taking off a star because even though we ordered the "English version", the instructions were almost entirely in Japanese. Had to use Google Translate to decipher it, but luckily it\'s intuitive enough that she figured it out on her own. Also, it requires quite a bit more pressure on the bar than we expected, so it\'s not nearly as easy to play as it should be. Still, she does have fun playing with it, so overall it\'s a success :-)'}, {'id': 'e4de5932-e54b-4933-82ac-fe859d977fb2', 'content': 'This thing will drive most adults crazy!!! The kids absolutely love them though so if you are looking for a great gift for a friend’s kid this is for you. The kid will love it and your friend will curse your existence.'}, {'id': 'c9d4994f-dd98-46b3-af65-b25c52761821', 'content': "This is a great gift for anyone, especially a kiddo. Preferably not your own kiddo unless they're respectful enough to play it in their own space. My kid was really happy to get it and plays with it often. Hasn't learned to play it like an instrument but it's a fun little gadget... As long as it's not near your face"}]}
 ,{'asin': 'B00SS92BFW', 'comments': [{'id': 'c1a86732-8439-4ce1-9aad-6bdb0aa89367', 'content': 'I\'m sorry to say that I was very disappointed when my coasters arrived. I order two sets for a total of eight pieces and not one of the eight was 4 inches at there widest point. They were advertised as 4-5 inches and this was a key point in my decision to purchase. Further, they were to arrive in a "gift box", they arrived in cardboard with the rubber feet in the box for me to attach. I\'m so glad I didn\'t send these directly as a gift. They are pretty but they will not even fit a coffee mug so they are not effective as coasters which is what I order. :-('}, {'id': 'a3775585-79b1-4e53-94a2-8532a1e2e8f8', 'content': 'HUGE disappointment. These coasters are so beautiful. But the LEAK pink on everything. TRAGIC.'}, {'id': 'e3974c1b-106c-424b-814c-8a77331b919b', 'content': 'The dye from these coasters stained my counter tops. The counter was sealed and I caught it soon enough to get the main punch of color out after a few treatments but there is still a shadow that will not fully go away. On another note these are extremely small and do not measure up to a "same size" set I purchased from another vendor previously. As others have said they may or may not be pretty like the picture (only one in my set was).'}, {'id': '2e20377c-f8e2-4a64-a2e8-7d50b9eff688', 'content': 'If you need real coasters, keep looking. They will protect your surfaces from heat and rings. But, they are totally non-absorbent, with no way to catch liquid, slightly slippery, and -with only three surface contact points- they are potentially unstable. On the other hand, they are unique (I suspect no two are the same) and attractive. I put these out with silicone coasters beneath them for stability and to give an option if a real coaster is needed. I have no idea how easily they might crack if dropped, or if a very hot item is placed on them.'}, {'id': 'bafba580-6776-4654-ba39-004e8a17c472', 'content': "I was so excited for these since they are so trendy but I put a glass of cold water on one (which was sweating) and when I moved the coaster it stained my white side table. I have been scrubbing it with a magic erase sponge but it won't come off."}, {'id': '09eb15a6-7a01-4276-b12c-dd4809574a02', 'content': 'I\'m underwhelmed. I expected that what I received would not necessarily match the picture, because there is a natural variation in rocks. I did, however, expect that the colors would be vibrant as represented in the picture (they aren\'t). They are almost dingy, even after washing with a gentle soap and drying with a t-shirt as suggested to others here. It also grinds my gears that someone in these reviews was told by the seller (customer service) that these aren\'t real agate. If they\'re dyed stone to create the agate look, then that should be disclosed in the description. Fair play if it is now, but I read through at the time of my purchase it was not noted by the seller. The packaging was OK. A box within a box. The smaller box that contained the slices could have been done providing more protection; all four were wrapped in paper, but there was no buffer between the slices, so they have scratches from each other on the outside rim due to what can only be slightly rubbing against each other during packaging and ship. Not tragic, but another nudge toward the "meh". Rubber bumpers were not included in my package. I\'m semi-crafty, so I had some already. No big deal, but worthy of note since they are supposed to be included. Sizes varied greatly. Some are OK, but one in particular is barely large enough to hold a bottle of mildly impressive hipster grade beer. Also, the thickness of the slices vary greatly as well. One is thick enough to be considered a nice solid weight, one is normal and two are quite thin. I would worry about structural integrity if I was to accidentally drop it. (some may crack, but two would definitely shatter on impact). It kinda drives me a little nuts that I can\'t neatly stack them in a manner that is aesthetically pleasing. Overall: They\'re fine, but I definitely wouldn\'t make this purchase again.'}, {'id': 'e1097435-73d6-41f9-916b-5d25b439a44f', 'content': 'These look amazing! But our glasses formed condensation and stuck to them, so when you picked up your glass, the coaster would come with it, fall, and shatter :('}, {'id': '211c41cb-153b-4cb3-9932-3f15a7231431', 'content': "Well I'm sad to say that this product was not great as coasters for a table. Sadly the sharp edges and very small silicone pads only provide enough stability to fool the user into thinking the platform will remain stable once something is placed on top. I would not recommend the product for purchase to others."}]}
@@ -69,10 +67,18 @@ app.post('/reviews', (req, res) => {
 app.get('/reviews/:id', (req, res) => {
     // Get the ID from the url
     asin = req.params.id;
+    var isValid = false;
+    products.forEach(function(product){
+        if (product.asin == asin) {
+            isValid = true;
+        }
+        
+    });
+    if (!isValid){
+          res.render('error');  
+    }
     var counter = 0;
-    // Grab the comments with that ID
     var comments = products.find(x => x.asin === asin).comments;
-    var commentText = comments.content
     var maxIter = comments.length;
     var product = {
         asin: asin,
@@ -87,9 +93,9 @@ app.get('/reviews/:id', (req, res) => {
     var mixedList = [];
     var keywords = [];
     
-    // Grab the sentiments for each comment
-    
+    // For each comment in comments, make a call to detect Sentiment and detect Keywords
     comments.forEach((comment)=> { 
+
         cp.detectSentiment({LanguageCode: "en", Text: comment.content}, (err, data) => {
             if(err) {
                 console.log(err);
@@ -135,7 +141,6 @@ app.get('/reviews/:id', (req, res) => {
                             product.averageScore[1] = Math.floor(product.averageScore[1]/comments.length*100);
                             product.averageScore[2] = Math.floor(product.averageScore[2]/comments.length*100);
                             product.averageScore[3] = Math.floor(product.averageScore[3]/comments.length*100);
-                            console.log(keywords);
                             res.render('report',{product: product, positiveList: positiveList, negativeList: negativeList, neutralList: neutralList, mixedList: mixedList, keywords: keywords});
                         }
                     }
@@ -144,6 +149,11 @@ app.get('/reviews/:id', (req, res) => {
         }); 
     })
 });
+
+app.get('*', function(req, res){
+    res.render('error');
+  });
+  
 app.listen(3000, () => {
     console.log("HT6 Server is running");
 });

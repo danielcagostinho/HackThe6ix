@@ -16,6 +16,32 @@
 
 
     <body>
+    <div class="container-fluid">
+          <nav>
+                <input type="checkbox" id="nav" class="hidden">
+                <label for="nav" class="nav-btn">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                </label>
+                <div class="logo">
+                      <a href="#"><img src="../assets/logo.png" width="50"></a>
+                </div>
+                <div class="nav-wrapper">
+                      <ul>
+                            <li><a href="/reviews">About</a></li>
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">Market Overview</a></li>
+                            <li><a href="#">Github</a></li>
+                      </ul>
+                </div>
+
+                <div class="row mb-4">
+                </div>
+
+          </nav>
+
+    </div>
 
       <div class="container-fluid">
         <div class="row mt-5 mb-5">
@@ -35,35 +61,31 @@
         </div>
       </div>
 
-        <div class="row mt-5 mb-5">
-          <div class="col-2 offset-2 text-center">
-            <div class="bg-gray">
+        <div class="row mt-5 mb-5 d-flex">
+          <div class="col-2 offset-2 text-center bg-green">
             <h1 class=" bolded"><%= product.averageScore[0] %> %</h1>
             <p>Good</p>
-          </div>
         </div>
 
-          <div class="col-2 text-center col-color">
-            <div class="bg-gray">
+          <div class="col-2 text-center bg-red">
               <h1 class="bolded"><%= product.averageScore[1] %> %</h1>
               <p>Bad</p>
-          </div>
+          
 
           </div>
 
-          <div class="col-2 text-center">
-            <div class="bg-gray">
+          <div class="col-2 text-center bg-yellow">
+            
               <h1 class="bolded"><%= product.averageScore[2] %> %</h1>
               <p>Neutral</p>
-            </div>
+            
 
           </div>
 
-          <div class="col-2 text-center">
-            <div class="bg-gray">
+          <div class="col-2 text-center bg-blue align-items-center">
               <h1 class="bolded"><%= product.averageScore[3] %> %</h1>
               <p>Mixed</p>
-            </div>
+            
 
           </div>
         </div>
