@@ -1,0 +1,41 @@
+<h1>
+This is the show page for <%= product.asin %> </h1>
+<% var numComments = product.comments.length; %>
+<p> Average Positive Score: <%= product.averageScore[0] %></p>
+<p> Average Negative Score: <%= product.averageScore[1] %></p>
+<p> Average Neutral Score: <%= product.averageScore[2] %></p>
+<p> Average Mixed Score: <%= product.averageScore[3] %></p>
+   <p> Positive List </p> 
+    <% positiveList.forEach((sentiment) => { %>
+    <ul>
+        <li> Comment: <%= sentiment.comment %></li>
+    </ul>
+    <% }); %>
+    <p> Negative List </p> 
+    <% negativeList.forEach((sentiment) => { %>
+    <ul>
+        <li> Comment: <%= sentiment.comment %></li>
+    </ul>
+    <% }); %>
+    <p> Neutral List </p> 
+    <% neutralList.forEach((sentiment) => { %>
+    <ul>
+        <li> Comment: <%= sentiment.comment %></li>
+    </ul>
+    <% }); %>
+    <p> Mixed List </p> 
+    <% mixedList.forEach((sentiment) => { %>
+    <ul>
+        <li> Comment: <%= sentiment.comment %></li>
+    </ul>
+    <% }); %>
+    <p> Keyword List </p> 
+    <ul>
+    <% keywords.forEach((keyword) => { %>
+        <li> <%= keyword %> </li>
+    <% }); %>
+    </ul>
+
+
+
+

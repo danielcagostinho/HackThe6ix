@@ -21,7 +21,7 @@
         <div class="row mt-5 mb-5">
           <div class="col-4 offset-2">
           <h1>feel.io Product Analysis</h1>
-          <h5>ASIN:#</h5>
+          <h5>ASIN:#<%= product.asin %> </h5>
         </div>
 
         <hr size="10px" width="70%" align="center">
@@ -38,14 +38,14 @@
         <div class="row mt-5 mb-5">
           <div class="col-2 offset-2 text-center">
             <div class="bg-gray">
-            <h1 class=" bolded">10%</h1>
+            <h1 class=" bolded"><%= product.averageScore[0] %> %</h1>
             <p>Good</p>
           </div>
         </div>
 
           <div class="col-2 text-center col-color">
             <div class="bg-gray">
-              <h1 class="bolded">#%</h1>
+              <h1 class="bolded"><%= product.averageScore[1] %> %</h1>
               <p>Bad</p>
           </div>
 
@@ -53,7 +53,7 @@
 
           <div class="col-2 text-center">
             <div class="bg-gray">
-              <h1 class="bolded">#%</h1>
+              <h1 class="bolded"><%= product.averageScore[2] %> %</h1>
               <p>Neutral</p>
             </div>
 
@@ -61,7 +61,7 @@
 
           <div class="col-2 text-center">
             <div class="bg-gray">
-              <h1 class="bolded">#%</h1>
+              <h1 class="bolded"><%= product.averageScore[3] %> %</h1>
               <p>Mixed</p>
             </div>
 
@@ -71,12 +71,20 @@
         <hr size="10px" width="70%" align="center">
       </div>
 
-      <div class="container-fluid">
-          <div class="row mt-5 mb-5">
-            <div class="col-4 offset-4 text-center">
+      <div class="container">
+        <div class="row mt-5 mb-5">
+          <div class="col-4 offset-4 text-center">
             <h3>Keyword Pain Point</h3>
           </div>
         </div>
+        <div class="row">
+          <% keywords.forEach((keyword) => { %>
+            <div class="col-3">
+            <a href="#"> <%= keyword %> </a>
+            </div>
+          <% }); %>
+        </div>
+      </div>
 
 
 

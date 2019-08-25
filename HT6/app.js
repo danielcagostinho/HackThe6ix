@@ -88,52 +88,61 @@ app.get('/reviews/:id', (req, res) => {
     var negativeList = [];
     var neutralList = [];
     var mixedList = [];
-
+    var keywords = [];
+    
     // Grab the sentiments for each comment
+    
     comments.forEach(comment=> { 
         cp.detectSentiment({LanguageCode: "en", Text: comment}, (err, data) => {
             if(err) {
                 console.log(err);
             } else {
-                averageScore = [0,0,0,0]
-                sentiment = {
-                    comment: comment,
-                    positive: data.SentimentScore.Positive, 
-                    neutral: data.SentimentScore.Neutral,
-                    negative: data.SentimentScore.Negative,
-                    mixed: data.SentimentScore.Mixed,
-                };
-                let arr = Object.values(data.SentimentScore);
-                let max = Math.max(...arr);
-                console.log('sentiment score type',data.SentimentScore)
-                console.log('max', max)
-                switch(arr.indexOf(max)){
-                    case 0:
-                        positiveList.push(sentiment);
-                        break;
-                    case 1:
-                        negativeList.push(sentiment);
-                        break;
-                    case 2:
-                        neutralList.push(sentiment);
-                        break;
-                    case 3:
-                        mixedList.push(sentiment);
-                        break;
-                }
-                product.averageScore[0] += data.SentimentScore.Positive;
-                product.averageScore[1] += data.SentimentScore.Negative;
-                product.averageScore[2] += data.SentimentScore.Neutral;
-                product.averageScore[3] += data.SentimentScore.Mixed;
-                product.comments.push({text: comment, sentiments: sentiment, averageScore: averageScore});
-                counter++;
-                if (counter == maxIter){
-                    product.averageScore[0] = product.averageScore[0]/comments.length;
-                    product.averageScore[1] = product.averageScore[1]/comments.length;
-                    product.averageScore[2] = product.averageScore[2]/comments.length;
-                    product.averageScore[3] = product.averageScore[3]/comments.length;
-                    res.render('show',{product: product});
-                }
+                cp.detectKeyPhrases({LanguageCode: "en", Text: comment}, (err1, data1) => {
+                    if(err) {
+                        console.log(err1);
+                    } else {
+                        data1['KeyPhrases'].forEach(function(keyPhrase){
+                            keywords.push(keyPhrase['Text']);
+                        });
+                        averageScore = [0,0,0,0];
+                        sentiment = {
+                            overall: data.Sentiment,
+                            comment: comment,
+                            positive: data.SentimentScore.Positive, 
+                            neutral: data.SentimentScore.Neutral,
+                            negative: data.SentimentScore.Negative,
+                            mixed: data.SentimentScore.Mixed
+                        };
+                        switch(sentiment.overall){
+                            case 'POSITIVE':
+                                positiveList.push(sentiment);
+                                break;
+                            case 'NEGATIVE':
+                                negativeList.push(sentiment);
+                                break;
+                            case 'NEUTRAL':
+                                neutralList.push(sentiment);
+                                break;
+                            case 'MIXED':
+                                mixedList.push(sentiment);
+                                break;
+                        }
+                        product.averageScore[0] += data.SentimentScore.Positive;
+                        product.averageScore[1] += data.SentimentScore.Negative;
+                        product.averageScore[2] += data.SentimentScore.Neutral;
+                        product.averageScore[3] += data.SentimentScore.Mixed;
+                        product.comments.push({text: comment, sentiments: sentiment, averageScore: averageScore});
+                        counter++;
+                        if (counter == maxIter){
+                            product.averageScore[0] = Math.floor(product.averageScore[0]/comments.length);
+                            product.averageScore[1] = Math.floor(product.averageScore[1]/comments.length*100);
+                            product.averageScore[2] = Math.floor(product.averageScore[2]/comments.length*100);
+                            product.averageScore[3] = Math.floor(product.averageScore[3]/comments.length*100);
+                            console.log(keywords);
+                            res.render('report',{product: product, positiveList: positiveList, negativeList: negativeList, neutralList: neutralList, mixedList: mixedList, keywords: keywords});
+                        }
+                    }
+                }); 
             };
         }); 
     })
