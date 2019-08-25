@@ -140,7 +140,7 @@ def ParseReviews(asin):
 def ReadAsin():
     # Add your own ASINs here
 
-    AsinList = ['B07DRQ3382']
+    AsinList = ['B005K4O610', 'B00MRJ8GXK', 'B00SS92BFW', 'B00WY3T1BU', 'B01N2YDEMI', 'B06ZZZ3XJR', 'B071781KGT', 'B071HHSMTT', 'B073GKYBPD', 'B07546PLRZ', 'B075V3DQ2Y', 'B07613LRJZ', 'B077N277CW', 'B077RPYT3N', 'B077Z4JTX1', 'B078J6WZYP', 'B07C1MB2WD', 'B07CG6RB25', 'B07CGGKG6L', 'B07D2B7JD5', 'B07DRQ3382', 'B07DXK18NX', 'B07FLMNQRG', 'B07FLNYQFJ', 'B07G32GBZZ', 'B07G9TKB4W', 'B07GH15W44', 'B07GJYY82V', 'B07HFY2BW1', 'B07HJ9TPQ1', 'B07HRHVF7W', 'B07J51J4RD', 'B07JLB8XJ1', 'B07PPPNLY5', 'B07Q365SVT', 'B07QFL8SQB']
     extracted_data = []
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -159,8 +159,6 @@ def ReadAsin():
         print(post)
         extracted_data.append(data)
         reviewArr.append(post)
-        #print('added the post to review arr')
-        sleep(5)
     x = reviews.insert_many(reviewArr)
 
     f = open('data.json', 'w')
