@@ -260,11 +260,19 @@ nav ul li a {
 
 
 .pattern-2{
-  background-color:#F9FAFA 
+  background-color:#F9FAFA
 }
 
+.bg-gray {
+  background: gray;
+  height: 100px;
+}
 
 
 .paragraph-pad{
   padding: 20px;
+}
+
+.col-color{
+  background-color:#333333 #;
 }
