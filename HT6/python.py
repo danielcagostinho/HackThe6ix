@@ -11,7 +11,7 @@ from re import sub
 from dateutil import parser as dateparser
 from time import sleep
 from pymongo import MongoClient
-
+import uuid
 reviewArr = []
 
 client = MongoClient("mongodb+srv://admin:McAi163fBaW0_@cluster0-96ptv.mongodb.net/test?retryWrites=true&w=majority")
@@ -153,11 +153,14 @@ def ReadAsin():
             "comments": []
         } 
         for review in data['reviews']:
-           post['comments'].append(
-               review['review_text']
+           post['comments'].append({
+               "id": uuid.uuid4(),
+               "content": review['review_text']
+           }
+               
             )
         print(post)
-        extracted_data.append(data)
+        extracted_data.append(post)
         reviewArr.append(post)
     x = reviews.insert_many(reviewArr)
 

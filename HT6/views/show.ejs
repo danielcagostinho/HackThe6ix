@@ -8,25 +8,25 @@ This is the show page for <%= product.asin %> </h1>
    <p> Positive List </p> 
     <% positiveList.forEach((sentiment) => { %>
     <ul>
-        <li> Comment: <%= sentiment.comment %></li>
+        <li> Comment: <%= sentiment.comment.content %></li>
     </ul>
     <% }); %>
     <p> Negative List </p> 
     <% negativeList.forEach((sentiment) => { %>
     <ul>
-        <li> Comment: <%= sentiment.comment %></li>
+        <li> Comment: <%= sentiment.comment.content %></li>
     </ul>
     <% }); %>
     <p> Neutral List </p> 
     <% neutralList.forEach((sentiment) => { %>
     <ul>
-        <li> Comment: <%= sentiment.comment %></li>
+        <li> Comment: <%= sentiment.comment.content %></li>
     </ul>
     <% }); %>
     <p> Mixed List </p> 
     <% mixedList.forEach((sentiment) => { %>
     <ul>
-        <li> Comment: <%= sentiment.comment %></li>
+        <li> Comment: <%= sentiment.comment.content %></li>
     </ul>
     <% }); %>
     <p> Keyword List </p> 
